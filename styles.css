@@ -1,0 +1,30 @@
+.titulo-modal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: center;
+    font-family: 'Barlow';
+}
+.wrapper-mensaje-modal {
+    text-align: center;
+    font-family: 'Barlow';
+}
+.wrapper-mensaje-modal p {
+    font-size: 18px;
+}
+
+.line {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .titulo-modal {
+      display: inline-flex;
+    }
+    .line {
+        display: block;
+        border: 1px solid #E8E8E8;
+    }
+  }

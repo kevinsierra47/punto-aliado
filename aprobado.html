@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Barlow', sans-serif;
+        }
+        .bg-aprobado {
+            background-image: url("https://www.puntoaliado.com/wp-content/uploads/2021/08/bg-aprobado.png");
+            height: auto;
+            background-size: cover;
+            padding: 15px;
+            display: grid;
+            justify-items: center;
+            gap: 0;
+        }
+        .bg-aprobado h1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content:center;
+            font-size: 40px;
+            color: #fff;
+            font-weight: bold;
+
+        }
+
+        .contenido-modal-aprobado {
+            display: grid;
+            justify-items: center;
+        }
+        .contenido-modal-aprobado p {
+            color: #B4B4B4;
+            font-weight: 500;
+        }
+        .bg-aprobado p {
+            color:#302C41 ;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            
+        }
+        p.valor-aprobado {
+            color: #fff;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        td.valor-aprobado {
+            color: #1EBFD6;
+            font-weight: bold;
+            padding: 0 20px;
+        }
+        td {
+            color: #B4B4B4;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-aprobado">
+        <div class="bg-aprobado">
+           <h1>Aprobación <img src="https://www.puntoaliado.com/wp-content/uploads/2021/08/checked.png"></h1>
+           <p>Hola</p>
+           <p>Ahora en Sufi cuentas con este valor</p>
+           <p class="valor-aprobado">${valor}</p>
+           <p>¡Para tu vehículo!</p>
+       
+        </div>
+        <div class="contenido-modal-aprobado">
+            <p>
+                En una próxima llamada que te realizará uno de nuestros asesores, acordaras con él cual es el valor que deseas financiar.
+             </p>
+             <h4>Te contamos algunos detalles</h4>
+             <table>
+                <tbody>
+                <tr>
+                <td>Valor del crédito</td>
+                <td class="valor-aprobado">${}</td>
+                </tr>
+                <tr>
+                <td>Plazo</td>
+                <td class="valor-aprobado">${}</td>
+                </tr>
+                <tr>
+                <td>Fecha máxima para desembolso</td>
+                <td class="valor-aprobado">${}</td>
+                </tr>
+                <tr>
+                <td>Número del radicado</td>
+                <td class="valor-aprobado">${}</td>
+                </tr>
+                </tbody>
+                </table>
+
+                <p>Pronto alguien del equipo comercial Sufi te estará contactando, para terminar el proceso de solicitud de crédito para financiar tu carro, con el definirás el valor a financiar y ampliarás las condiciones de tu crédito.
+
+                    Para conocer términos y condiciones de la financiación ingresa</p>
+                <a id="terminosaprobacion" href="#">AQUI</a>
+             
+        </div>
+    </div>
+</body>
+</html>
