@@ -107,4 +107,60 @@
         </div>
     </div>
 </body>
+
+<script>
+    jQuery(".money_format").on({
+  "focus": function(event) {
+    jQuery(event.target).select();
+  },
+  "keyup": function(event) {
+    jQuery(event.target).val(function(index, value) {
+      return value.replace(/\D/g, "")
+        //.replace(/([0-9])([0-9]{2})$/, '$1.$2')
+        .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+    });
+  }
+});
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    function addCommas(nStr){
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+    var marca = getParameterByName('marca');
+    document.getElementById("financial").value = addCommas(getParameterByName('precio'));
+    console.log(marca);
+
+ 
+    jQuery(document).ready(function($){
+	//	console.log("jquery disponible");
+		jQuery('#second-option').on('click', function(event){
+			location.href="https://www.puntoaliado.com/test-sufi/?product_category="+getParameterByName('product_category')+"&product_subCategory="+getParameterByName('product_subCategory')+"&modelo="+getParameterByName('modelo')+"&marca="+getParameterByName('marca')+"&linea="+getParameterByName('linea')+"&precio="+jQuery("#financial").val()+"&inicial="+getParameterByName('inicial')+"&installment="+getParameterByName('installment');
+		  //  location.href="https://creditoparacarro.puntoaliado.com/solicitud-de-credito-punto-aliado-paso-uno?iass=false&product_category="+getParameterByName('product_category')+"&product_subCategory="+getParameterByName('product_subCategory')+"&modelo="+getParameterByName('modelo')+"&marca="+getParameterByName('marca')+"&linea="+getParameterByName('linea')+"&precio="+jQuery("#financial").val()+"&inicial="+getParameterByName('inicial')+"&installment="+getParameterByName('installment');
+		        
+		});
+        jQuery('#first-option').on('click', function(event){
+		//	location.href="https://www.puntoaliado.com/test-sufi/?product_category="+getParameterByName('product_category')+"&product_subCategory="+getParameterByName('product_subCategory')+"&modelo="+getParameterByName('modelo')+"&marca="+getParameterByName('marca')+"&linea="+getParameterByName('linea')+"&precio="+jQuery("#financial").val()+"&inicial="+getParameterByName('inicial')+"&installment="+getParameterByName('installment');
+		   location.href="https://creditoparacarro.puntoaliado.com/solicitud-de-credito-punto-aliado-paso-uno?iass=false&product_category="+getParameterByName('product_category')+"&product_subCategory="+getParameterByName('product_subCategory')+"&modelo="+getParameterByName('modelo')+"&marca="+getParameterByName('marca')+"&linea="+getParameterByName('linea')+"&precio="+jQuery("#financial").val()+"&inicial="+getParameterByName('inicial')+"&installment="+getParameterByName('installment');
+		        
+		});
+		if(getParameterByName('marca').length>0){
+    		jQuery("#marca").html(getParameterByName('marca'));
+    		jQuery("#linea").html(getParameterByName('linea'));
+    		jQuery("#modelo").html(getParameterByName('modelo'));
+    		jQuery("#precio").html(addCommas(getParameterByName('precio')));
+		}
+	});
+</script>
 </html>
